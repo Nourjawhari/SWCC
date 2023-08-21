@@ -1,0 +1,64 @@
+:root {
+    --card-title-color: #0066cc;
+    --secondarydark-bg-color: #0066cc;
+    --primary-bg-color : #edf0f4;
+    --card-bg-color: white;
+    --card-border-radius: 16px;
+}
+
+/* HEADER  STYLING */
+
+div[name="Navbar"] {
+    position: fixed !important;
+    top: 60px;
+    width: 100%;
+    right: 0;
+    z-index: 100;
+    overflow: visible;
+}
+
+div[name="Navbar"] * {
+    background-color: white;
+}
+
+[name="UserName"] {
+    color: var(--card-title-color);
+}
+
+/* TRANSLATOR STYLING */
+
+[name="TranslatorHeader"] {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+[name="TranslatorHeader"] span {
+    background: var(--secondarydark-bg-color) !important;
+}
+
+/* Form Boundaries */
+
+.runtime-form {
+
+    position: absolute !important;
+    top: 180px;
+    left: 15%;
+    width: 70% !important;
+}
+
+/* Form styling*/
+.theme-entry .form {
+    background: var(--primary-bg-color);
+}
+
+div[name*="Card"] {
+    background: var(--card-bg-color) !important;
+    border-radius: var(--card-border-radius) !important;
+}
+
+div[name*="Card"] [name*= "FTitle"]{
+    border-bottom: 1px solid #F5FBFF;
+    padding-bottom: 10px;
+}
