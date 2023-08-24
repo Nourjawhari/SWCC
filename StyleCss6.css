@@ -320,15 +320,41 @@ a[name*= "Btn"] {
     font-size: var(--button-font-size);
 }
 
-a[name*= "Btn"]::after {
+.button-icon {
     content: "";
+    background-image: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/send-icon.png");
+    width: var(--button-icon-size) !important;
+    height: var(--button-icon-size) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 10px;
+}
+
+.RuntimeEN a[name*= "Btn"]::after {
+    /* content: "";
     background-image : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/send-icon.png");
     width: var(--button-icon-size) !important;
     height: var(--button-icon-size) !important;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-left: 10px;   
+    margin-left: 10px;    */
+
+    @extend .button-icon;
+}
+
+.RuntimeAR a[name*= "Btn"]::before {
+    /* content: "";
+    background-image : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/send-icon.png");
+    width: var(--button-icon-size) !important;
+    height: var(--button-icon-size) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 10px;    */
+
+    @extend .button-icon;
 }
 
 /* Change the loading icon color in the attachment field*/
