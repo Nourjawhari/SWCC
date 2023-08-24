@@ -84,14 +84,14 @@ div[name*="Card"]{
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background: white !important;
+    /* background: white !important; */
     border-radius: var(--card-border-radius) !important;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
     box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
 
 }
 
-body[href*="RuntimeAR"] {
+div[name*="Card"][href*="RuntimeAR"] {
     background: red !important;
 }
 
