@@ -1,9 +1,35 @@
+@font-face {
+    font-family: 'SWCC-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/julianogharzeddine/CustomFiles@main/SWCC-3-Medium.otf') format('opentype');
+    /* Adjust the path and font format */
+}
+
+* {
+    font-family: 'SWCC-Medium' !important;
+}
+
+/*General variables*/
+
 :root {
     --card-title-color: #0066cc;
     --secondarydark-bg-color: #0066cc;
     --primary-bg-color : #edf0f4;
     --card-bg-color: white;
     --card-border-radius: 16px;
+    --card-header-height: 60px;
+    --card-header-size : 24px;
+    --card-border-input-color: #D0D5DD;
+    --card-height: 60;
+    --input-border-radius: 8px;
+    --input-height: 38px;
+    --input-font-size: 14px;
+    --icon-size: 25px;
+    --button-border-radius: 8px;
+    --button-font-size: 14px;
+    --button-width: 120px;
+    --button-height: 45px;
+    --button-icon-size: 20px;
+    --loading : #dfdfdf;
 }
 
 /* HEADER  STYLING */
@@ -41,9 +67,8 @@ div[name="Navbar"] * {
 /* Form Boundaries */
 
 .runtime-form {
-
     position: absolute !important;
-    top: 180px;
+    top: 150px;
     left: 15%;
     width: 70% !important;
 }
@@ -53,12 +78,286 @@ div[name="Navbar"] * {
     background: var(--primary-bg-color);
 }
 
-div[name*="Card"] {
-    background: var(--card-bg-color) !important;
+/*Card Styling*/
+
+div[name*="Card"]{
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background: white !important;
     border-radius: var(--card-border-radius) !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+    box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
+
 }
 
-div[name*="Card"] [name*= "FTitle"]{
-    border-bottom: 1px solid #F5FBFF;
-    padding-bottom: 10px;
+body[href*="RuntimeAR"] {
+    background: red !important;
+}
+
+/*Card header Styling*/
+
+div[name*="Card"] .panel-header-text,
+div[name*="Card"] .grid-header-text{
+    border-bottom: 1px solid #EAECF0;
+    font-size: var(--card-header-size) !important;
+    color: var(--card-title-color) !important;
+    height: 100% !important;
+}
+
+div[name*="Card"] .panel-header-text span,
+div[name*="Card"] .grid-header-text span{
+    height: 100%;
+    display: flex !important;
+    align-items: center;
+    padding-top: 5px;
+}
+
+div[name*="Card"] .panel-header,
+div[name*="Card"] .grid-header{
+    height: var(--card-header-height) !important;
+}
+
+div[name*="Card"] .panel-header-wrapper,
+div[name*="Card"] .grid-header-wrapper{
+    height: 100% !important;
+}
+
+div[name*="Card"] .panel-header-c,
+div[name*="Card"] .grid-header-c{
+    height: 100% !important;
+}
+
+div[name*="Card"] .panel-body-wrapper,
+div[name*="Card"] .grid-body-wrapper{
+    background: var(--card-bg-color) !important;
+}
+
+div[name*="Card"] .panel-header,
+div[name*="Card"] .grid-header{
+    background: var(--primary-bg-color) !important;
+}
+
+div[name*="Card"] .panel-header-wrapper,
+div[name*="Card"] .grid-header-wrapper{
+    background: var(--card-bg-color) !important;
+}
+
+/* Label, input, textarea and inputLabelContainer Styling*/
+
+span[name*= "labelInputContainer"],
+span[name*= "labelInputSearchContainer"]{
+    margin-top: 10px !important;
+}
+
+span[name*= "labelInputContainer"] span,
+span[name*= "labelInputSearchContainer"] span,
+span[name*= "labelInputCalenderContainer"] span{
+    font-size: var(--input-font-size) !important;
+    font-weight: bold;
+    color: black !important;
+    margin-bottom: 4px !important;
+}
+
+span[name*= "labelInputContainer"] input,
+span[name*= "labelInputContainer"] .input-control-m-c,
+[name*= "FileNameAttachmentInput"]{  
+    border-radius: var(--input-border-radius) !important;
+    border: 1px solid var(--card-border-input-color) !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important; 
+    font-size: var(--input-font-size) !important;
+}  
+
+span[name*= "labelInputContainer"] .input-control-watermark,
+span[name*= "labelInputCalenderContainer"] .input-control-watermark,
+span[name*= "labelInputContainer"] input,
+[name*= "FileNameAttachmentInput"]{
+    text-align: left !important;
+}
+
+span[name*= "labelInputContainer"] input,
+[name*= "FileNameAttachmentInput"]{
+    height: var(--input-height) !important;
+}
+/*Label, input and inputLabelContainer for search input Styling */
+
+span[name*= "labelInputSpecialContainer"] .input-control-m-c {
+    height: var(--input-height) !important;
+    border: none !important;
+    border-radius: var(--input-border-radius) !important;
+}
+
+span[name*= "labelInputSpecialContainer"] .input-control-buttons {
+    border: none !important;
+    border-radius: 8px !important;
+}
+
+span[name*= "labelInputSpecialContainer"] > div {
+    border: 1px solid var(--card-border-input-color) !important;
+    border-radius: 8px !important;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+
+span[name*= "labelInputSearchContainer"] a {
+    padding-top: 20px !important;
+} 
+
+
+span[name*= "labelInputCalenderContainer"] .input-control-buttons a {
+    content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/calendar.png");
+    width: 20px !important;
+    height: 20px !important; 
+    margin: 0px 10px;
+    padding: 0px !important;
+}
+
+
+/*Attachment field styling*/
+
+span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"],
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"]{
+    width: 100% !important;
+    height: var(--input-height) !important;
+    border-radius: var(--input-border-radius);
+    border: 1px dashed var(--card-border-input-color) !important;
+}
+
+span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table,
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table,
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"].active table{
+    width: 100% !important;
+}
+
+span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table td,
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td{
+    width: 100% !important;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px;
+}
+
+span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table td img,
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td img
+{
+    width: var(--icon-size) !important;
+    height: var(--icon-size) !important;
+    content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/download.png");
+    margin: 8px 2px;
+}
+
+div[name*="FileAttachmentIcon"].file-wrapper.no-info.uploaded table td {
+    justify-content: flex-start;
+    align-content: center !important;
+}
+
+div[name*="FileAttachmentIcon"].file-wrapper.no-info.uploaded table td img {
+    width: var(--icon-size) !important;
+    height: calc(var(--icon-size) - 5%) !important;
+    content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/file.png");
+    margin-left: 5px;
+    margin-top: 5px !important;
+}
+
+div[name*= "FileAttachmentIcon"] .file-delete {
+    width: calc(var(--icon-size)- 10%) !important;
+    height: calc(var(--icon-size) - 10%) !important;
+    margin-top: 7px !important;
+    content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/trash-can.png");
+}
+
+/*Display space betwen two fields in the same row */
+
+span[name*="leftComponent"] {
+    margin-right: 1rem;
+}
+
+span[name*="rightComponent"] {
+    margin-left: 1rem;
+}
+
+a[name*= "Btn"] {
+    width: var(--button-width) !important;
+    height: var(--button-height) !important;
+    border-radius: var(--button-border-radius) !important;
+    border: 0px !important;
+    font-size: var(--button-font-size);
+}
+
+a[name*= "Btn"]::after {
+    content: "";
+    background-image : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/send-icon.png");
+    width: var(--button-icon-size) !important;
+    height: var(--button-icon-size) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-left: 10px;   
+}
+
+/* Change the loading icon color in the attachment field*/
+.theme-entry .file-progress-wrapper>svg circle:nth-child(1){
+    fill: var(--loading) !important;
+}
+
+div[name*= "AttachmentsTable"] .first {
+    height: 38px !important;
+
+}
+
+div[name*= "AttachmentsTable"] .first a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    margin-top: 6px !important; 
+    padding: 0px !important;
+    padding-left: 5px !important;
+    display: flex !important;
+    align-items: center;
+}
+
+div[name*= "AttachmentsTable"] .first a::before {
+    content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/file_resize.png");
+    margin-right: 5px !important;
+}
+
+div[name*= "AttachmentsTable"] .last .grid-content-cell-wrapper {
+    text-align: left;
+}
+
+div[name*="AttachmentsTable"] a[name*="Delete"] .button-icon,
+div[name*="AttachmentsTable"] a[name*="Add"] .button-icon {
+    background-position: 20px !important;
+    min-height: 0px !important;
+}
+
+div[name*="AttachmentsTable"] a[name*="Add"] .button-icon {
+    content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/plus_icon.png");
+    width: 20px;
+    height: 20px;
+}
+
+div[name*="AttachmentsTable"] a[name*="Delete"] .button-icon {
+   content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/trash-can.png");
+    width: 20px;
+    height: 20px;
+}
+
+div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text {
+    color: white;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    opacity: 1 !important;
+}
+
+
+.theme-entry .grid .grid-column-headers div,
+.theme-entry .grid .grid-column-headers span {
+    background: #388ce1 !important;
 }
