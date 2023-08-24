@@ -320,7 +320,7 @@ a[name*= "Btn"] {
     font-size: var(--button-font-size);
 }
 
-.RuntimeEN a[name*= "Btn"]::after {
+.RuntimeEN a[name*= "Btn"]::before {
     content: "";
     background-image : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/send-icon.png");
     width: var(--button-icon-size) !important;
@@ -328,7 +328,8 @@ a[name*= "Btn"] {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    margin-left: 10px;   
+    margin-right: 10px;
+    transform: rotate(90deg);
 }
 
 .RuntimeAR a[name*= "Btn"]::before {
