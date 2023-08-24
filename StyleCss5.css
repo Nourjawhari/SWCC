@@ -189,10 +189,10 @@ span[name*= "labelInputContainer"] input,
     padding: 0px 10px  !important;
 }
 
-span[name*= "labelInputContainer"] .input-control-watermark,
-span[name*= "labelInputCalenderContainer"] .input-control-watermark,
-span[name*= "labelInputContainer"] input,
-[name*= "FileNameAttachmentInput"]{
+.RuntimeEN span[name*= "labelInputContainer"] .input-control-watermark,
+.RuntimeEN span[name*= "labelInputCalenderContainer"] .input-control-watermark,
+.RuntimeEN span[name*= "labelInputContainer"] input,
+.RuntimeEN [name*= "FileNameAttachmentInput"]{
     text-align: left !important;
 }
 
@@ -401,5 +401,3 @@ div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text {
 .theme-entry .grid .grid-column-headers span {
     background: #388ce1 !important;
 }
-
-
