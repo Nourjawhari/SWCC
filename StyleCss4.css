@@ -84,16 +84,13 @@ div[name*="Card"]{
     width: 100%;
     padding: 20px;
     box-sizing: border-box;
-    /* background: white !important; */
+    background: white !important;
     border-radius: var(--card-border-radius) !important;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.06);
     box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1);
 
 }
 
-div[name*="Card"][href*="RuntimeAR"] {
-    background: red !important;
-}
 
 /*Card header Styling*/
 
@@ -145,6 +142,11 @@ div[name*="Card"] .grid-header-wrapper{
 
 /* Label, input, textarea and inputLabelContainer Styling*/
 
+span[name*= "labelInputContainer"] textarea {
+    padding: 0px !important;
+    padding-left: 0px !important
+}
+
 span[name*= "labelInputContainer"],
 span[name*= "labelInputSearchContainer"]{
     margin-top: 10px !important;
@@ -165,14 +167,40 @@ span[name*= "labelInputContainer"] .input-control-m-c,
     border-radius: var(--input-border-radius) !important;
     border: 1px solid var(--card-border-input-color) !important;
     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important; 
-    font-size: var(--input-font-size) !important;
-}  
+    font-size: var(--input-font-size) !important;  
+} 
+
+span[name*= "labelInputContainer"] .input-control-m-c {
+    padding: 0px !important;
+}
+
+span[name*= "labelInputContainer"] .input-control-m-c .editable-area.input-control.styling-font {
+    height: 100% !important;
+}
+
+/*Runtime Arabic*/
+
+.RuntimeAR span[name*= "labelInputContainer"] .input-control-m-c {
+    padding: 0px 10px!important;
+}
+
+span[name*= "labelInputContainer"] input,
+[name*= "FileNameAttachmentInput"] {
+    padding: 0px 10px  !important;
+}
 
 span[name*= "labelInputContainer"] .input-control-watermark,
 span[name*= "labelInputCalenderContainer"] .input-control-watermark,
 span[name*= "labelInputContainer"] input,
 [name*= "FileNameAttachmentInput"]{
     text-align: left !important;
+}
+
+.RuntimeAR span[name*= "labelInputContainer"] .input-control-watermark,
+.RuntimeAR span[name*= "labelInputCalenderContainer"] .input-control-watermark,
+.RuntimeAR span[name*= "labelInputContainer"] input,
+.RuntimeAR [name*= "FileNameAttachmentInput"]{
+    text-align: right !important;
 }
 
 span[name*= "labelInputContainer"] input,
@@ -185,6 +213,8 @@ span[name*= "labelInputSpecialContainer"] .input-control-m-c {
     height: var(--input-height) !important;
     border: none !important;
     border-radius: var(--input-border-radius) !important;
+    display: flex;
+    align-items: center;
 }
 
 span[name*= "labelInputSpecialContainer"] .input-control-buttons {
@@ -196,7 +226,7 @@ span[name*= "labelInputSpecialContainer"] > div {
     border: 1px solid var(--card-border-input-color) !important;
     border-radius: 8px !important;
     box-sizing: border-box;
-    padding: 0px 10px;
+    /* padding: 0px 10px; */
 }
 
 span[name*= "labelInputSearchContainer"] a {
@@ -267,6 +297,11 @@ div[name*= "FileAttachmentIcon"] .file-delete {
     content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/trash-can.png");
 }
 
+.RuntimeAR div[name*= "FileAttachmentIcon"] .file-delete {
+    right: auto !important;
+    left: 0 !important;
+}
+
 /*Display space betwen two fields in the same row */
 
 span[name*="leftComponent"] {
@@ -332,6 +367,11 @@ div[name*="AttachmentsTable"] a[name*="Add"] .button-icon {
     min-height: 0px !important;
 }
 
+/*Add margin between the icon and the word in arabic runtime in the list view*/
+.RuntimeAR div[name*="AttachmentsTable"] .button-text{
+    margin-right : 5px !important;
+}
+
 div[name*="AttachmentsTable"] a[name*="Add"] .button-icon {
     content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/plus_icon.png");
     width: 20px;
@@ -361,3 +401,5 @@ div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text {
 .theme-entry .grid .grid-column-headers span {
     background: #388ce1 !important;
 }
+
+
