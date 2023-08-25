@@ -21,7 +21,7 @@
     --card-border-input-color: #D0D5DD;
     --card-height: 60;
     --input-border-radius: 8px;
-    --input-height: 38px;
+    --input-height: 36px;
     --input-font-size: 14px;
     --icon-size: 25px;
     --button-border-radius: 8px;
@@ -143,31 +143,40 @@ div[name*="Card"] .grid-header-wrapper{
 /* Label, input, textarea and inputLabelContainer Styling*/
 
 span[name*= "labelInputContainer"] textarea {
-    padding: 0px !important;
-    padding-left: 0px !important
+    padding: 10px!important;
 }
 
 span[name*= "labelInputContainer"],
-span[name*= "labelInputSearchContainer"]{
+span[name*= "labelInputSpecialContainer"]{
     margin-top: 10px !important;
 }
 
-span[name*= "labelInputContainer"] span,
-span[name*= "labelInputSearchContainer"] span,
-span[name*= "labelInputCalenderContainer"] span{
+span[name*= "labelInputContainer"] span:first,
+span[name*= "labelInputSpecialContainer"] span:first{
     font-size: var(--input-font-size) !important;
     font-weight: bold;
     color: black !important;
     margin-bottom: 4px !important;
 }
 
+span[name*= "labelInputSpecialContainer"] .input-control-wrapper .editable-area.input-control.styling-font.read-only {
+    display: flex;
+    align-items: center;
+    height: 100% !important;
+}
+
+span[name*= "labelInputSpecialContainer"] span.entity {
+    display: flex;
+    align-items: center;
+}
+
 span[name*= "labelInputContainer"] input,
 span[name*= "labelInputContainer"] .input-control-m-c,
-[name*= "FileNameAttachmentInput"]{  
+[name*= "FileNameAttachmentInput"]{
     border-radius: var(--input-border-radius) !important;
-    border: 1px solid var(--card-border-input-color) !important;
-    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important; 
-    font-size: var(--input-font-size) !important;  
+    /* border: 1px solid var(--card-border-input-color) !important; */
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+    font-size: var(--input-font-size) !important;
 } 
 
 span[name*= "labelInputContainer"] .input-control-m-c {
@@ -209,15 +218,15 @@ span[name*= "labelInputContainer"] input,
 }
 /*Label, input and inputLabelContainer for search input Styling */
 
-span[name*= "labelInputSpecialContainer"] .input-control-m-c {
+span[name*= "labelInputSpecialContainer"] .input-control-m-c{
     height: var(--input-height) !important;
-    border: none !important;
+    border: none !important; 
     border-radius: var(--input-border-radius) !important;
     display: flex;
     align-items: center;
 }
 
-span[name*= "labelInputSpecialContainer"] .input-control-buttons {
+span[name*= "labelInputSpecialContainer"] .input-control-buttons{
     border: none !important;
     border-radius: 8px !important;
 }
@@ -234,7 +243,8 @@ span[name*= "labelInputSearchContainer"] a {
 } 
 
 
-span[name*= "labelInputCalenderContainer"] .input-control-buttons a {
+span[name*= "labelInputCalenderContainer"] .input-control-buttons a,
+div[name*="AttachmentsTable"] div[name*= "Calendar"] .input-control-buttons a{
     content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/calendar.png");
     width: 20px !important;
     height: 20px !important; 
@@ -242,11 +252,42 @@ span[name*= "labelInputCalenderContainer"] .input-control-buttons a {
     padding: 0px !important;
 }
 
+/* ------LIST VIEW WITH SPECIAL INPUT LIKE PICKER< CALENDER-------*/
+/*Search and input in the list view styling*/
+
+div[name*= "AttachmentsTable"] .picker,
+input[name*= "ListViewInputControl"],
+div[name*="AttachmentsTable"] div[name*= "Calendar"]{
+    display: flex !important;
+    align-items: center;
+    border: 1px solid var(--card-border-input-color) !important;
+    border-radius: 6px !important;
+    background: white;
+    margin-bottom: 1px;
+}
+
+input[name*= "ListViewInputControl"] {
+    height: 32px !important;
+}
+
+div[name*= "AttachmentsTable"] .picker,
+div[name*= "Calendar"]{
+    height: 30px;
+}
+
+div[name*= "AttachmentsTable"] .picker .input-control .input-control-m-c,
+div[name*= "AttachmentsTable"] .picker .input-control .input-control-buttons,
+div[name*= "Calendar"].input-control .input-control-m-c,
+div[name*= "Calendar"].input-control .input-control-buttons{
+    border: none !important;
+}
+
 
 /*Attachment field styling*/
 
 span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"],
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"]{
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"],
+div[name*="AttachmentsTable"] div[name*= "ListViewAttachmentControl"]{
     width: 100% !important;
     height: var(--input-height) !important;
     border-radius: var(--input-border-radius);
@@ -260,7 +301,8 @@ div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"].active table{
 }
 
 span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table td,
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td{
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td,
+div[name*="AttachmentsTable"] div[name*= "ListViewAttachmentControl"] table td{
     width: 100% !important;
     display: flex;
     justify-content: flex-end;
@@ -269,8 +311,8 @@ div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td{
 }
 
 span[name*= "labelInputContainer"] div[name*="FileAttachmentIcon"] table td img,
-div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td img
-{
+div[name*="AttachmentsTable"] div[name*="FileAttachmentIcon"] table td img,
+div[name*="AttachmentsTable"] div[name*= "ListViewAttachmentControl"] table td img{
     width: var(--icon-size) !important;
     height: var(--icon-size) !important;
     content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/download.png");
@@ -353,7 +395,8 @@ div[name*= "AttachmentsTable"] .first {
 
 }
 
-div[name*= "AttachmentsTable"] .first a{
+div[name*= "AttachmentsTable"] .first a,
+div[name*= "DisplayTable"] .first a{
     text-decoration: none;
     color: black;
     font-weight: 700;
@@ -364,13 +407,14 @@ div[name*= "AttachmentsTable"] .first a{
     align-items: center;
 }
 
-div[name*= "AttachmentsTable"] .first a::before {
+div[name*= "AttachmentsTable"] .first a::before,
+div[name*= "DisplayTable"] .first a::before{
     content: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/file_resize.png");
     margin-right: 5px !important;
 }
 
 div[name*= "AttachmentsTable"] .last .grid-content-cell-wrapper {
-    text-align: left;
+    text-align: center;
 }
 
 div[name*="AttachmentsTable"] a[name*="Delete"] .button-icon,
@@ -396,8 +440,9 @@ div[name*="AttachmentsTable"] a[name*="Delete"] .button-icon {
     height: 20px;
 }
 
-div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text {
-    color: white;
+div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text,
+div[name*="DisplayTable"] .grid-column-headers .grid-column-header-text{
+    color: white !important;
     height: 38px;
     display: flex;
     align-items: center;
@@ -412,4 +457,54 @@ div[name*="AttachmentsTable"] .grid-column-headers .grid-column-header-text {
 .theme-entry .grid .grid-column-headers div,
 .theme-entry .grid .grid-column-headers span {
     background: #388ce1 !important;
+}
+
+span[name*= "labelInputContainerWrapper"] input {
+    border: none !important;
+}
+.imgwrapper {
+    display : flex !important ;
+    width : 100% ;
+    align-items : center ;
+    border : .5px solid var(--card-border-input-color) ;
+    border-radius: 8px;
+    box-sizing : border-box !important;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05) !important;
+}
+.imgwrapper img {
+    /* content : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/trash-can.png"); */
+    margin-right : 10px ;
+ 
+}
+
+/*Applicant Data Icons*/
+
+span[name*= "RequesterName"] .inputIcon{
+    content : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/user.svg");
+}
+
+span[name*= "EmployeeNumber"] .inputIcon{
+    content : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/EmployeeNumber.svg");
+}
+
+span[name*= "Department"] .inputIcon{
+    content : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/Department.svg");
+}
+
+span[name*= "Job"] .inputIcon{
+    content : url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/Job.svg");
+}
+
+span[name*= "OffenderName"] .picker-search {
+    background-image: url("https://cdn.jsdelivr.net/gh/Nourjawhari/SWCC_Icons@main/Search.svg");
+    background-repeat: no-repeat;
+    background-position: -2px 10px;
+}
+
+span[name*= "OffenderName"] .picker-search span {
+    opacity: 0;
+}
+
+div[name*= "CardListViewWithAdd"] .grid-header {
+    margin-bottom: 17px;
 }
