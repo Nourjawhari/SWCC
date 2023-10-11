@@ -392,9 +392,20 @@ a[name*= "Btn"] {
     border-radius: var(--button-border-radius) !important;
     border: 0px !important;
     font-size: var(--button-font-size);
+    margin: 0px 5px;
 }
 
-.RuntimeEN a[name*= "Btn"]::before {
+a[name*= "Send"] {
+    background: var(--secondarydark-bg-color) !important;
+}
+
+a[name*= "Cancel"] {
+    border: 1px solid var(--secondarydark-bg-color) !important;
+    background: var(--primary-bg-color) !important;
+    color: var(--secondarydark-bg-color) !important;
+}
+
+.RuntimeEN a[name*= "Send"]::before {
     content: "";
     background-image :var(--send-icon) ;
     width: var(--button-icon-size) !important;
@@ -406,7 +417,7 @@ a[name*= "Btn"] {
     transform: rotate(90deg);
 }
 
-.RuntimeAR a[name*= "Btn"]::before {
+.RuntimeAR a[name*= "Send"]::before {
     content: "";
     background-image : var(--send-icon);
     width: var(--button-icon-size) !important;
