@@ -395,7 +395,8 @@ a[name*= "Btn"] {
     margin: 0px 5px;
 }
 
-a[name*= "Send"] {
+a[name*= "Send"],
+a[name*= "Approve"]{
     background: var(--secondarydark-bg-color) !important;
 }
 
