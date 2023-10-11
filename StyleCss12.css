@@ -433,13 +433,13 @@ a[name*= "Cancel"] {
     fill: var(--loading) !important;
 }
 
-div[name*= "AttachmentsTable"] .first {
+div[name*= "AttachmentsTable"] .last {
     height: 38px !important;
 
 }
 
-div[name*= "AttachmentsTable"] .first a,
-div[name*= "DisplayTable"] .first a{
+div[name*= "AttachmentsTable"] .last a,
+div[name*= "DisplayTable"] .last a{
     text-decoration: none;
     color: black;
     font-weight: 700;
@@ -450,13 +450,13 @@ div[name*= "DisplayTable"] .first a{
     align-items: center;
 }
 
-div[name*= "AttachmentsTable"] .first a::before,
-div[name*= "DisplayTable"] .first a::before{
+div[name*= "AttachmentsTable"] .last a::before,
+div[name*= "DisplayTable"] .last a::before{
     content: var(--file-resize-icon);
     margin-right: 5px !important;
 }
 
-div[name*= "AttachmentsTable"] .last .grid-content-cell-wrapper {
+div[name*= "AttachmentsTable"] .first .grid-content-cell-wrapper {
     text-align: center;
 }
 
@@ -569,4 +569,9 @@ div[name*= "CardListViewWithAdd"] .grid-header {
 
 .RuntimeAR.row:has([name*="Card"]) .innerpanel {
     margin: 0px !important
+}
+
+/*Radio buttons and checkboxes style*/
+span[name*="ChoicesInput"] .input-control-m-c {
+    border: none !important;
 }
