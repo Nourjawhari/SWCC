@@ -8,6 +8,16 @@
     font-family: 'SWCC-Medium' !important;
 }
 
+.RuntimeAR .multi-select-box-list-item {
+    display : flex !important ;
+}
+
+
+.RuntimeAR  .multi-select-box-list-item label {
+    display : flex !important;
+    gap : 7px ;
+}
+
 /*General variables*/
 
 :root {
@@ -576,3 +586,6 @@ div[name*= "CardListViewWithAdd"] .grid-header {
 span[name*="ChoicesInput"] .input-control-m-c {
     border: none !important;
 }
+
+
+
