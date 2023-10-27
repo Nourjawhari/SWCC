@@ -27,7 +27,7 @@
     --border-bottom-header-color: #EAECF0;
     --card-bg-color: white;
     --card-border-radius: 16px;
-    --card-header-height: 60px;
+    --card-header-height: 40px;
     --card-header-size : 24px;
     --card-border-input-color: #D0D5DD;
     --card-height: 60;
@@ -406,11 +406,14 @@ a[name*= "Btn"] {
 }
 
 a[name*= "Send"],
-a[name*= "Approve"]{
+a[name*= "Approve"],
+a[name*= "ActionButton"]{
     background: var(--secondarydark-bg-color) !important;
 }
 
-a[name*= "Cancel"] {
+a[name*= "Return"],
+a[name*="Back"],
+a[name*= "Reject"]{
     border: 1px solid var(--secondarydark-bg-color) !important;
     background: var(--primary-bg-color) !important;
     color: var(--secondarydark-bg-color) !important;
